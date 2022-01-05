@@ -1,2 +1,2 @@
 # JS GameLoop
-Simple game loop with directional input and delta time
+Simple game loop with directional input and delta time in JavaScript.
