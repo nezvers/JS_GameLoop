@@ -10,9 +10,11 @@ var btnUp = 0;
 var btnDown = 0;
 
 // game loop
-var mainLoop = setInterval(Main, 0);
+// reference to process of automatic Main function call with 0ms interval (as fast as possible)
+var mainLoop = setInterval(Main, 0); 
 
 // properties
+// gets values from css style
 var x = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 var y = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
 var speed = 120;
@@ -39,8 +41,7 @@ document.addEventListener("keydown", event => {
                 btnDown = 1;
             }
         }
-    }
-)
+})
 
 // INPUT RELEASED
 document.addEventListener("keyup", event =>{
@@ -64,8 +65,7 @@ document.addEventListener("keyup", event =>{
                 btnDown = 0;
             }
         }
-    }
-)
+})
 
 function Main(){
     GetDeltaTime()
@@ -73,6 +73,7 @@ function Main(){
     SetPosition();
 }
 
+// Get time passed since previous frame
 function GetDeltaTime(){
     var now = Date.now();
     delta = (now - lastTick) * 0.001;
