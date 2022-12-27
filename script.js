@@ -1,4 +1,5 @@
 var game = document.getElementById("game");
+//const ctx = canvas.getContext("2d");
 var character = document.getElementById("character");
 var lastTick = Date.now();
 var delta; // time between frames
@@ -89,4 +90,15 @@ function Move(){
 function SetPosition(){
     character.style.left = x + "px";
     character.style.top = y + "px";
+}
+
+// create an instance of a projectile
+function SpawnProjectile(x, y){
+    var projectile = document.createElement("div");
+    projectile.setAttribute("class", "projectile");
+    projectile.setAttribute("id", "projectile");
+    projectile.style.left = x;
+    projectile.style.top = y;
+    game.appendChild(projectile);
+    return projectile;
 }

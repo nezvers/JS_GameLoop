@@ -18,3 +18,10 @@
     left: 190px;
     z-index: 1000;
 }
+.projectile{
+    width:5px;
+    height:5px;
+    background-color: black;
+    position: relative;
+    top: 100px;
+}
